@@ -30,4 +30,8 @@ export class QueryParamsDto {
   @IsIn(['male', 'female'])
   @IsString()
   gender: 'male' | 'female';
+
+  @IsOptional()
+  @IsString()
+  from: string;
 }

@@ -24,7 +24,7 @@ export class DirectorsController {
 
   @Get()
   findAll(
-    @Query() { page, take, ageFrom, ageTo, name, gender }: QueryParamsDto,
+    @Query() { page, take, ageFrom, ageTo, name, gender, from }: QueryParamsDto,
   ) {
     return this.directorsService.findAll(
       page,
@@ -33,6 +33,7 @@ export class DirectorsController {
       ageTo,
       name,
       gender,
+      from,
     );
   }
 

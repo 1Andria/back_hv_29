@@ -42,6 +42,7 @@ export class DirectorsService {
     ageTo?: number,
     name?: string,
     gender?: string,
+    from?: string,
   ) {
     let where: any = {};
 
@@ -59,6 +60,10 @@ export class DirectorsService {
 
     if (gender) {
       where.gender = gender;
+    }
+
+    if (from) {
+      where.countryOfOrigin = from;
     }
 
     const [data, total] = await this.directorRepo.findAndCount({
