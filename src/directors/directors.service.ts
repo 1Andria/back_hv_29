@@ -63,7 +63,7 @@ export class DirectorsService {
     }
 
     if (from) {
-      where.countryOfOrigin = from;
+      where.countryOfOrigin = ILike(`${from}%`);
     }
 
     const [data, total] = await this.directorRepo.findAndCount({
